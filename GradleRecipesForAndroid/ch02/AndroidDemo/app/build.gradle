@@ -28,19 +28,25 @@ ext {
     }
 }
 
-
-task printProperties() {
-    println 'printProperties...'
-    doLast {
+def printProperties() {
         println "username=$user"
         println "password=$pass"
 
-        project.allprojects {
-            println "p: $it"
-        }
-    }
-
 }
+
+
+task printProperties {
+    doLast {
+        println("22222")
+    }
+}
+task "name", {
+    doLast {
+        printProperties()
+    }
+}
+
+task "myTask", {1}
 
 project.allprojects {
     println "p------->: $it"
